@@ -1,0 +1,54 @@
+h1 {text-align: center;}
+video {text-align: center;}
+.gradient-title {
+  /* Задаем размер шрифта */
+  font-size: 3.5rem; 
+  font-weight: bold;
+  
+  /* 1. Создаем градиентный фон (цвета можно менять) */
+  background: linear-gradient(90deg, #ff0080, #ff8c00, #41d100, #00c8ff, #9900ff);
+  
+  /* 2. Делаем фон шире заголовка для плавной анимации */
+  background-size: 400% auto;
+  
+  /* 3. "Обрезаем" фон строго по контуру текста */
+  -webkit-background-clip: text;
+  background-clip: text;
+  
+  /* 4. Делаем исходный цвет текста прозрачным, чтобы видеть фон под ним */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  
+  /* 5. Применяем анимацию, которая будет двигать фон бесконечно */
+  animation: shine 6s linear infinite;
+}
+
+/* 6. Описываем саму анимацию (движение фона) */
+@keyframes shine {
+  to {
+    background-position: -400% center;
+  }
+}
+.video-container video, 
+.video-container iframe {
+    display: block;               /* Превращаем в блочный элемент */
+    margin: 0 auto; 
+    margin-top: 200px;              /* Отступы: 0 сверху/снизу, автоматически слева/справа */
+}
+body {
+    /* Путь к вашей картинке */
+    background-image: url('images/svinota.jpg'); 
+    
+    /* Растягивает картинку на весь экран, сохраняя пропорции */
+    background-size: cover; 
+    
+    /* Отменяет размножение картинки, если она меньше экрана */
+    background-repeat: no-repeat; 
+    
+    /* Центрирует изображение на странице */
+    background-position: center; 
+    
+    /* Фиксирует фон при прокрутке страницы */
+    background-attachment: fixed; 
+}
+
